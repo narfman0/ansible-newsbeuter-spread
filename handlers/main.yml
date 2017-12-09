@@ -1,0 +1,19 @@
+---
+- name: Supervisor changed
+  service:
+    name: supervisor
+    state: restarted
+    enabled: yes
+  become: True
+
+- name: Read newsbeuter
+  supervisorctl:
+    name: newsbeuter
+    state: present
+  become: True
+
+- name: Restart newsbeuter
+  supervisorctl:
+    name: newsbeuter
+    state: restarted
+  become: True

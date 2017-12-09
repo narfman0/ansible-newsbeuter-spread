@@ -1,0 +1,7 @@
+[program:newsbeuter]
+directory={{ newsbeuter_spread_path }}
+command=gunicorn app:app -b localhost:{{ newsbeuter_spread_port }}
+user={{ newsbeuter_spread_user }}
+autostart=true
+autorestart=true
+redirect_stderr=True

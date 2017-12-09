@@ -1,0 +1,28 @@
+---
+- name: Update apt (debian)
+  # The following line should be all that is necessary, but cache is messing it up
+  # apt: update_cache=yes cache_valid_time=3600
+  when: ansible_os_family == 'Debian'
+  apt: update_cache=yes
+  changed_when: False
+  become: True
+
+- name: Install packages (debian)
+  when: ansible_os_family == 'Debian'
+  package: name={{ item }} state=latest
+  with_items:
+    - python3-pip
+  become: True
+
+- name: Install packages (rhel)
+  when: ansible_os_family != 'Debian'
+  package: name={{ item }} state=latest
+  with_items:
+    - python3-pip
+  become: True
+
+- name: Install supervisor
+  package: name=supervisor state=latest
+  become: True
+  notify:
+  - Supervisor changed

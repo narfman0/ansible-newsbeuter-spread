@@ -1,0 +1,25 @@
+---
+galaxy_info:
+  author: "Jon Robison"
+  description: "Ansible role that installs and configures [newsbeuter-spread](https://github.com/narfman0/newsbeuter-spread/)"
+  license: GPL3
+  min_ansible_version: 1.9
+  platforms:
+    - name: Debian
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Fedora
+      versions:
+        - all
+    - name: RHEL
+      versions:
+        - all
+    - name: OpenSUSE
+      versions:
+        - all
+  categories:
+    - networking
+dependencies: []

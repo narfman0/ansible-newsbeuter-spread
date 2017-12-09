@@ -1,0 +1,8 @@
+---
+- hosts: newsbeuter
+  become: True
+  become_method: 'sudo'
+  vars_files:
+    - defaults/main.yml
+  tasks:
+    - include: tasks/main.yml
