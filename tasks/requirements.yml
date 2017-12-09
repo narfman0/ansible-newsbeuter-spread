@@ -1,10 +1,9 @@
 ---
-- name: pip install gunicorn
-  pip: name=gunicorn
-  become: True
-
-- name: pip install newsbeuter-spread requirements.txt
-  pip: requirements={{ newsbeuter_spread_path }}requirements.txt
+- name: pip install gunicorn, newsbeuter-spread
+  pip: name={{ item }}
+  with-items:
+    - gunicorn
+    - newsbeuter-spread
   become: True
   notify:
   - Restart newsbeuter

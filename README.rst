@@ -18,12 +18,13 @@ Installation
 
 Install with ```ansible-galaxy install narfman0.newsbeuter-spread``
 
+Note: by default, the newsbeuter cache is expected to be in the home directory:
+`/home/newsbeuter/.newsbeuter/cache.db`.
+
 TODO
 ----
 
-* Check out project to home directory
 * Create virtual env
-* Test configure gunicorn (with check out dir and venv)
 
 License
 -------

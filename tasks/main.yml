@@ -1,36 +1,7 @@
 ---
-- include: packages.yml
-
 - name: Create newsbeuter user
   user: name=newsbeuter comment="Newsbeuter Spread"
 
-- name: Check newsbeuter spread directory
-  stat:
-    path: "{{ newsbeuter_spread_path }}"
-  register: newsbeuter_dir_stat_result
-
-- name: Create newsbeuter directory
-  file: path={{ newsbeuter_spread_path }} state=directory mode=0755
-  when: newsbeuter_dir_stat_result.stat.exists == False
-
+- include: packages.yml
 - include: requirements.yml
-
-- name: Generate supervisord file (debian)
-  when: ansible_os_family == 'Debian'
-  template: src=newsbeuter.conf.j2
-          dest=/etc/supervisor/conf.d/newsbeuter.conf
-          owner=root
-          group=root
-          mode=640
-  notify:
-  - Read newsbeuter
-
-- name: Generate supervisord file (rhel)
-  when: ansible_os_family != 'Debian'
-  template: src=newsbeuter.conf.j2
-          dest=/etc/supervisord.d/newsbeuter.conf
-          owner=root
-          group=root
-          mode=640
-  notify:
-  - Read newsbeuter
+- include: supervisor.yml
