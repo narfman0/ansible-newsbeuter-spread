@@ -1,7 +1,7 @@
 ---
 - name: pip install gunicorn, newsbeuter-spread
   pip: name={{ item }}
-  with-items:
+  with_items:
     - gunicorn
     - newsbeuter-spread
   become: True

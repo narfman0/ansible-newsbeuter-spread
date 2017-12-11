@@ -7,18 +7,8 @@
   changed_when: False
   become: True
 
-- name: Install packages (debian)
-  when: ansible_os_family == 'Debian'
-  package: name={{ item }} state=latest
-  with_items:
-    - python3-pip
-  become: True
-
-- name: Install packages (rhel)
-  when: ansible_os_family != 'Debian'
-  package: name={{ item }} state=latest
-  with_items:
-    - python3-pip
+- name: Install packages
+  package: name=python3-pip state=latest
   become: True
 
 - name: Install supervisor
