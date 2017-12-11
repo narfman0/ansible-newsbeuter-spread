@@ -1,8 +1,8 @@
 ansible-newsbeuter-spread
 =========================
 
-.. image:: http://img.shields.io/badge/ansible--galaxy-newsbeuter-spread-blue.svg
-  :target: https://galaxy.ansible.com/narfman0/newsbeuter-spread/
+.. image:: http://img.shields.io/badge/ansible--galaxy-ansible-newsbeuter-spread-blue.svg
+  :target: https://galaxy.ansible.com/narfman0/ansible-newsbeuter-spread/
 
 .. image:: https://travis-ci.org/narfman0/ansible-newsbeuter-spread.png?branch=master
     :target: https://travis-ci.org/narfman0/ansible-newsbeuter-spread
@@ -16,7 +16,7 @@ We use gunicorn and supervisord
 Installation
 ------------
 
-Install with ```ansible-galaxy install narfman0.newsbeuter-spread``
+Install with ```ansible-galaxy install narfman0.ansible-newsbeuter-spread``
 
 Note: by default, the newsbeuter cache is expected to be in the home directory:
 `/home/newsbeuter/.newsbeuter/cache.db`.
