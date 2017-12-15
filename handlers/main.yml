@@ -17,3 +17,4 @@
     name: newsbeuter
     state: restarted
   become: True
+  ignore_errors: yes
